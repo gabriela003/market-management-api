@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/decrypto_prueba
+    password: 1234
+    username: user
+  sql:
+    init:
+      data-locations:
+      - classpath:carga_sql/archivo-carga.sql
+      mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
