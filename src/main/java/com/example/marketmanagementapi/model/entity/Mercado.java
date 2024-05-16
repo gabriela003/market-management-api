@@ -30,8 +30,22 @@ import java.util.List;
 
     private String pais;
 
-    @ManyToMany(mappedBy = "mercados")
+
+    @ManyToMany(mappedBy = "mercados", cascade = CascadeType.MERGE)
     @JsonIgnoreProperties("mercados")
     private List<Comitente> comitentes;
+
+    public void addComitente(Comitente comitente) {
+        if (this.comitentes != null) {
+            this.comitentes.add(comitente);
+            comitente.getMercados().add(this);
+        }
+    }
+    public void removeComitente(Comitente comitente) {
+        if (this.comitentes != null) {
+            this.comitentes.remove(comitente);
+            comitente.getMercados().remove(this);
+        }
+    }
 
 }
