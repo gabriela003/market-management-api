@@ -1,4 +1,4 @@
-package com.example.marketmanagementapi.controller;
+package com.example.marketmanagementapi.controller.impl;
 
 import com.example.marketmanagementapi.model.dto.ComitenteDto;
 import com.example.marketmanagementapi.service.ComitenteService;
@@ -31,7 +31,7 @@ public class ComitenteController {
         return new ResponseEntity<>(comitenteService.getAllComitentes(), HttpStatus.OK);
     }
 
-    @PostMapping("delete/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<?> deleteComitente(@PathVariable Long id){
         return new ResponseEntity<>(comitenteService.deleteComitente(id), HttpStatus.OK);
     }

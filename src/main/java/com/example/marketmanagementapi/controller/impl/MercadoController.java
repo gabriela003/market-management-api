@@ -1,4 +1,4 @@
-package com.example.marketmanagementapi.controller;
+package com.example.marketmanagementapi.controller.impl;
 
 import com.example.marketmanagementapi.model.dto.MercadoDto;
 import com.example.marketmanagementapi.service.MercadoService;
@@ -30,7 +30,7 @@ public class MercadoController {
         return new ResponseEntity<>(mercadoService.getAllMercados(), HttpStatus.OK);
     }
 
-    @PostMapping("delete/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<?> deleteMercado(@PathVariable Long id){
         return new ResponseEntity<>(mercadoService.deleteMercado(id), HttpStatus.OK);
     }
@@ -38,7 +38,7 @@ public class MercadoController {
     public ResponseEntity<?> addComitenteToMercado(@PathVariable Long idComitente, @PathVariable Long idMercado){
         return new ResponseEntity<>(mercadoService.addComitenteToMercado(idComitente, idMercado), HttpStatus.OK);
     }
-    @PostMapping("delete-comitente-from-mercado/{idComitente}/{idMercado}")
+    @DeleteMapping("delete-comitente-from-mercado/{idComitente}/{idMercado}")
     public ResponseEntity<?> deleteComitenteFromMercado(@PathVariable Long idComitente, @PathVariable Long idMercado){
         return new ResponseEntity<>(mercadoService.deleteComitenteFromMercado(idComitente, idMercado), HttpStatus.OK);
     }
