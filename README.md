@@ -44,3 +44,7 @@ In this environment you will connect to a mysql database with the credentials:
 
 in ```/resources/postman-collection```
 you will find a postman collection to test microservices
+
+Swagger Documentation: ```http://localhost:8080/doc/swagger-ui/```
+
+
