@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "167ecc1e-77da-47e5-b992-cc6352c6ea8d",
+		"name": "pruebaET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17184820"
+	},
+	"item": [
+		{
+			"name": "comitente",
+			"item": [
+				{
+					"name": "agregar comitente [POST]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion\": \"probando 1 desde postman\",\r\n    \"mercados\":[{\r\n        \"mercadoId\": 1\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/comitente/add-comitente",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comitente",
+								"add-comitente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener comitente por Id [GET]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/comitente/get/{{comitenteId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comitente",
+								"get",
+								"{{comitenteId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener listado de comitentes [GET]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/comitente/get-all-comitentes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comitente",
+								"get-all-comitentes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar comitente [DEL]",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/comitente/delete/{{comitenteId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comitente",
+								"delete",
+								"{{comitenteId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mercado",
+			"item": [
+				{
+					"name": "agregar mercado [POST]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mercadoCodigo\": \"MEP-AR\",\r\n    \"descripcion\":\"liquidación bruta en tiempo real (LBTR)\",\r\n    \"pais\":\"Argentina\",\r\n    \"comitentes\":[\r\n        {\r\n            \"id\":2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/mercado/add-mercado",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mercado",
+								"add-mercado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener mercado por iD [GET]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/mercado/get/{{mercadoId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mercado",
+								"get",
+								"{{mercadoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agregar comitente a mercado [POST]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/mercado/add-new-comitente-to-mercado/{{comitenteId}}/{{mercadoId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mercado",
+								"add-new-comitente-to-mercado",
+								"{{comitenteId}}",
+								"{{mercadoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener listado de mercados [GET]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/mercado/get-all-mercados",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mercado",
+								"get-all-mercados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar mercado por Id [DEL]",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/mercado/delete/{{mercadoId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mercado",
+								"delete",
+								"{{mercadoId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quitar comitente de mercado [DEL]",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/mercado/delete-comitente-from-mercado/{{comitenteId}}/{{mercadoId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"mercado",
+								"delete-comitente-from-mercado",
+								"{{comitenteId}}",
+								"{{mercadoId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "obtener distribución de comitentes por país y mercado [GET]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/metricas/stats",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"metricas",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
