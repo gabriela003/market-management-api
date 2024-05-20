@@ -32,13 +32,9 @@ http://localhost:8080/h2-console/
 
 To run the API in a production environment, the selected profile must be ```prod```.
 
-In this environment you will connect to a mysql database with the credentials:
-```
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/decrypto_prueba
-    password: 1234
-    username: user
-```
+In this environment you will connect to a mysql database.
+
+The productive url is https://market-management-api-production.up.railway.app/ 
 
 ## Documentation
 
